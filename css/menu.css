@@ -40,6 +40,7 @@
   background: #ffffff;
   align-items: center;
   justify-content: center;
+  transition: all 0.4s ease;
 }
 
 /* Humbarger Lines Top and Botttom */
@@ -53,7 +54,24 @@
   height: 2px;
   background: inherit;
 }
-
+/* moves line down */
 .menu-wrap .hamburger > div::after {
   top: 10px;
+}
+
+/* toggler animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* turns line into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
 }
